@@ -34,7 +34,6 @@ Spork.prefork do
       config.filter_run_excluding :slow => true
       config.filter_run_excluding :broken => true
       config.run_all_when_everything_filtered = true
-      config.include ShowMeTheCookies, :type=>:feature
     end
 
     Capybara.configure do |config|
