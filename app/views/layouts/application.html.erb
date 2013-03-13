@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Podio Dashboard</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container">
+	<div class="navbar">
+	  <div class="navbar-inner">
+	  	<div class="brand">
+					Podio Base Integration
+	  	</div>
+	    <ul class="main-nav nav">
+	    	<% if session[:podio_access_token] %>
+
+	      <%end%>
+	      <li>
+	      	<a href="https://sheetscom.podio.com/" target="_new">Podio <i class='icon-share'></i></a>
+	      </li>
+	      <li>
+				 	<% if session[:podio_access_token] %>
+						<div class="dropdown">
+						  <a class="dropdown-toggle" data-toggle="dropdown" href="#"><img src="<%= @user_thumbnail_url %>" class="user-thumbnail" /><%= @user_name %> <i class="icon-cog"></i></a>
+						  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+						    <li><a tabindex="-1" href="/help">Help</a></li>
+						    <li class="divider"></li>
+						 		<li><%= link_to "Log out", logout_path, :class=>"btn btn-info btn-mini", :id=>"logout-btn" %></li>
+						  </ul>
+						</div>
+					<% end %>
+	      </li>
+	    </ul>
+	  </div>
+	</div>
+
+
+<% if flash[:notice] %>
+	<div class="row">
+		<div class="span3 offset4">
+			<div class="alert alert-success fade in">
+				<button type="button" class="close" data-dismiss="alert">×</button>
+				<%= flash[:notice] %>
+			</div>
+		</div>
+	</div>
+<% end %>
+
+<% if flash[:error] %>
+	<div class="row">
+		<div class="span3 offset4">
+			<div class="alert alert-error fade in">
+				<button type="button" class="close" data-dismiss="alert">×</button>
+				<%= flash[:error] %>
+			</div>
+		</div>
+	</div>
+<% end %>
+
+<div class="content">
+
+	<%= yield %>
+
+
+	<div id="footer" class="navbar">
+	  <div class="navbar-inner footer-inner">
+	  	<% if @api_health %><div class="api span3">Podio API Health <%= @api_health.round(2) %>%</div><% end %>
+	    <a class="brand" target="_new" href="http://blinkapplications.com">crafted with care by &nbsp;<%= image_tag "blink_logo_white.png", :class=>"blink-logo" %></a>
+	  </div>
+	</div>
+
+</div>
+
+</div>
+</body>
+</html>

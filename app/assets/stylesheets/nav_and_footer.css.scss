@@ -1,0 +1,145 @@
+.sheets-logo {
+	height:30px;
+	margin-top: 0px;
+	margin-right:12px;
+}
+
+.navbar .brand {
+	padding-bottom:0px;
+	padding-top:10px;
+	min-width: 200px;
+}
+
+
+.navbar {
+	margin-bottom: 0px;
+
+}
+
+.navbar .main-nav {
+		float:right;
+		margin-right: 0px;
+}
+
+.nav > li {
+	border-left: 1px solid #3376A4;
+	/*border-left: 1px solid #4b89b2;*/
+	-moz-transition-property: background-color;
+	-webkit-transition-property: background-color;
+	-ms-transition-property: background-color;
+	transition-property: background-color;
+	-moz-transition-duration: 0.2s;
+	-webkit-transition-duration: 0.2s;
+	-ms-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	-moz-transition-timing-function: ease-in;
+	-webkit-transition-timing-function: ease-in;
+	-ms-transition-timing-function: ease-in;
+	transition-timing-function: ease-in;
+}
+
+
+#logout-btn {
+	color: white;
+	margin: 0px 5px;
+}
+
+.navbar .nav > li > a:hover {
+	color:white;
+}
+
+.nav > li:hover {
+		background-color: #4680A5;
+
+		a {
+			text-decoration: none;
+		}
+		.logout-btn {
+			color: white;
+			margin: 0px 5px;
+		}
+}
+
+
+.dropdown {
+	margin-left: 15px;
+	padding-right: 10px;
+	min-width: 100px;
+	min-height: 35px;
+	margin-top: 5px;
+	margin-bottom: 0px;
+	.user-thumbnail {
+		height:30px;
+		margin-right: 10px;
+		margin-bottom: 0px;
+		-moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
+		-ms-border-radius: 3px;
+		border-radius: 3px;
+	}
+	.dropdown-toggle {
+		color:white;
+		margin-bottom: 25px;
+		padding-bottom: 10px;
+		&:focus {text-decoration:none;}
+	}
+
+	.dropdown-menu{
+		min-width: 130px;
+	}
+
+}
+
+
+
+.navbar .nav > li > a, .navbar .brand {
+	color: white;
+	text-shadow: none;
+}
+
+
+
+.navbar-inner {
+	color: #FFF;
+	border-radius: 0px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-right:3px;
+	border-left: 3px;
+	background-image: none;
+	/*background-color: #4b89b2;*/
+	background-color: #5092bd;
+	border-bottom: 1px solid #4680A5;
+	border-top: none;
+	padding: 0px 0px 0px 10px;
+}
+
+#footer { 
+	position:absolute; bottom:0;
+	width: 100%;
+	margin-bottom: 0px;
+	margin-top: 40px;
+	.api {
+		color: transparent;
+		padding-top: 11px;
+		&:hover { color: white; };
+	}
+	.brand {
+		font-size: 13px;
+		padding: 8px 20px 0px;
+		margin-right: 5px;
+		float:right;
+		vertical-align: middle;
+	}
+
+	.blink-logo { 
+		margin-left: 0px;
+		height:25px;
+		}
+
+}
+
+
+.blink-home-logo {
+
+}
