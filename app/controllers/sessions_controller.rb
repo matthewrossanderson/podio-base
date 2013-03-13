@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
 
   def failure
     if params[:message]
-      flash[:error] = "Error Logging in. Please try again or contact us if you still encounter difficulties." << message.html_safe
+      flash[:error] = "Error Logging in. Please try again or contact us if you still encounter difficulties. " << params[:message].html_safe
     end
     render :new
   end
