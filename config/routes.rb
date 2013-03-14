@@ -1,5 +1,7 @@
 PodioBase::Application.routes.draw do
 
+  get "hooks/callback"
+
   root :to => 'sessions#new'
 
   resources :sessions, :only => [:new, :create] do
