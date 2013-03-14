@@ -24,6 +24,8 @@ gem 'haml'
 # jquery is also fun
 gem 'jquery-rails'
 
+gem 'yaml'
+
 # lots of fun stuff here
 group :assets do
   gem 'sass-rails'
@@ -41,6 +43,7 @@ end
 
 group :development, :test do
   gem 'figaro'
+  gem 'rspec-rails'
 end
 
 group :test do
@@ -51,7 +54,6 @@ group :test do
   gem 'launchy'
   gem 'database_cleaner' 
   gem 'spork'
-  gem 'rspec-rails'
   gem "factory_girl_rails", "~> 4.0"
   gem 'rb-fsevent', '~> 0.9.1'
   gem 'guard-rspec'

@@ -11,16 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130222220528) do
+ActiveRecord::Schema.define(:version => 20130314161147) do
 
   create_table "apps", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "workspace_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
+  add_index "apps", ["workspace_id"], :name => "index_apps_on_workspace_id"
+
   create_table "fields", :force => true do |t|
-    t.string   "name"
+    t.string   "label"
+    t.boolean  "required"
     t.integer  "app_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -36,6 +40,12 @@ ActiveRecord::Schema.define(:version => 20130222220528) do
     t.datetime "updated_at",                   :null => false
     t.string   "name"
     t.string   "thumbnail_url"
+  end
+
+  create_table "workspaces", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
