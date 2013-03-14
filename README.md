@@ -8,7 +8,11 @@ Create an API key by logging into Podio and go to Account Settings in the My Acc
 
 == Configuration
 
-You must put your API key and secret in the environment variables PODIO_CLIENT_ID and PODIO_CLIENT_SECRET.  For development you can use the figaro gem, which sources them from application.yml
+You must put your API key and secret in the environment variables PODIO_CLIENT_ID and PODIO_CLIENT_SECRET.  Put your user id into PODIO_USER_ID.
+For development you can use the figaro gem, which sources them from application.yml. Alternatively, (.powenv 
+Do a find/replace for PodioBase
+Change the session key in config/initializers/session_store.rb
+Generate a new session secret with rake
 
 
 == Features
