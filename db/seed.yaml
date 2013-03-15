@@ -1,0 +1,18 @@
+# INTEGRATION SEED DATA
+# specify workspaces by their full url including protocol
+# specify apps by their url label
+# specify fields by their Label from the app builder
+
+---
+
+workspaces:  
+  -
+    url: https://torontocondoteamca.podio.com/contacts/
+    apps: 
+      -
+        url_label: contact-template3
+        fields:
+          - label: Name
+            required: true
+          - label: Lead Owner/ Agent
+          - label: Qualifying Questions Ref

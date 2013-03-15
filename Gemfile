@@ -24,8 +24,6 @@ gem 'haml'
 # jquery is also fun
 gem 'jquery-rails'
 
-gem 'yaml'
-
 # lots of fun stuff here
 group :assets do
   gem 'sass-rails'
