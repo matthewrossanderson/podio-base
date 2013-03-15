@@ -1,6 +1,6 @@
 PodioBase::Application.routes.draw do
 
-  get "hooks/callback"
+  post "hooks/callback"
 
   root :to => 'sessions#new'
 
