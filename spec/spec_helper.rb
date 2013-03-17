@@ -19,9 +19,6 @@ Spork.prefork do
     # in spec/support/ and its subdirectories.
     Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
-    # Rake Seed Test Database
-    load "#{Rails.root}/db/seeds.rb"
-
     RSpec.configure do |config|
       config.mock_with :rspec
       config.include Capybara::DSL
@@ -57,6 +54,10 @@ Spork.prefork do
       c.allow_http_connections_when_no_cassette = true
       c.debug_logger = File.open('spec/cassettes/vcr.log','w')
     end
+
+    # Rake Seed Test Database
+    load "#{Rails.root}/db/seeds.rb"
+
 
 
 end
