@@ -11,13 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130314161147) do
+ActiveRecord::Schema.define(:version => 20130317214956) do
 
   create_table "apps", :force => true do |t|
     t.string   "name"
     t.integer  "workspace_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+    t.boolean  "meets_spec",   :default => false
   end
 
   add_index "apps", ["workspace_id"], :name => "index_apps_on_workspace_id"

@@ -27,6 +27,7 @@
 #           - label: Expected total value of lead
 #             id: 21327620
 
+
 Podio.setup(
   :api_url => 'https://api.podio.com',
   :api_key => ENV['PODIO_CLIENT_ID'],
@@ -47,39 +48,43 @@ Workspace.delete_all
 App.delete_all
 Field.delete_all
 
-specification["workspaces"].each do |workspace|
+if specification && specification["workspaces"]
 
-	Workspace.new do |new_workspace|
-		podio_space = Podio::Space.find_by_url(workspace["url"])
-		new_workspace.id = podio_space.id
-		new_workspace.name = podio_space.name
+	specification["workspaces"].each do |workspace|
 
-		workspace["apps"].each do |app|
+		Workspace.new do |new_workspace|
+			podio_space = Podio::Space.find_by_url(workspace["url"])
+			new_workspace.id = podio_space.id
+			new_workspace.name = podio_space.name
 
-			podio_app = Podio::Application.find(app["id"])
-			raise "App not found: #{app["url_label"]}" if podio_app.nil?
-	
-			new_workspace.apps.build do |new_app|
-				new_app.name = podio_app.config["name"]
-				new_app.id = podio_app.id
+			workspace["apps"].each do |app|
 
-				app["fields"].each do |field|
+				podio_app = Podio::Application.find(app["id"])
+				raise "App not found: #{app["url_label"]}" if podio_app.nil?
+		
+				new_workspace.apps.build do |new_app|
+					new_app.name = podio_app.config["name"]
+					new_app.id = podio_app.id
 
-					podio_field = podio_app.fields.select { |p| p["field_id"] == field["id"] }
-					raise "Field not found: #{field["label"]} - #{field["id"]}" if podio_field.length == 0
-					raise "Duplicate field found: #{field["label"]} - #{field["id"]}" if podio_field.length > 1
-					podio_field = podio_field.first
+					app["fields"].each do |field|
 
-					new_app.fields.build do |new_field|
-						new_field.id = podio_field["field_id"]
-						new_field.label = podio_field["config"]["label"]
-						new_field.save
+						podio_field = podio_app.fields.select { |p| p["field_id"] == field["id"] }
+						raise "Field not found: #{field["label"]} - #{field["id"]}" if podio_field.length == 0
+						raise "Duplicate field found: #{field["label"]} - #{field["id"]}" if podio_field.length > 1
+						podio_field = podio_field.first
+
+						new_app.fields.build do |new_field|
+							new_field.id = podio_field["field_id"]
+							new_field.label = podio_field["config"]["label"]
+							new_field.save
+						end
 					end
+					new_app.save
 				end
-				new_app.save
+				new_workspace.save
 			end
-			new_workspace.save
 		end
 	end
+
 end
 

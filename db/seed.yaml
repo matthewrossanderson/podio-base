@@ -3,16 +3,19 @@
 # specify apps by their url label
 # specify fields by their Label from the app builder
 
----
-
-workspaces:  
-  -
-    url: https://torontocondoteamca.podio.com/contacts/
-    apps: 
-      -
-        url_label: contact-template3
-        fields:
-          - label: Name
-            required: true
-          - label: Lead Owner/ Agent
-          - label: Qualifying Questions Ref
+# ---
+# workspaces:
+#   -
+#     url: https://blinkapps.podio.com/api-proving-ground/
+#     apps:
+#       -
+#         name: Leads               # this is only used for better readability, not stored
+#         id: 2784930
+#         fields:
+#           - label: Lead contacts      # this is only used for readability
+#             id: 21327618              # this is required
+#             required: true            # this will be used for app verification 
+#           - label: Lead owner
+#             id: 21327619
+#           - label: Expected total value of lead
+#             id: 21327620
