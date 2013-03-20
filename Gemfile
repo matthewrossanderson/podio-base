@@ -42,6 +42,7 @@ end
 group :development, :test do
   gem 'figaro'
   gem 'rspec-rails'
+  gem "factory_girl_rails"
 end
 
 group :test do
@@ -52,7 +53,6 @@ group :test do
   gem 'launchy'
   gem 'database_cleaner' 
   gem 'spork'
-  gem "factory_girl_rails", "~> 4.0"
   gem 'rb-fsevent', '~> 0.9.1'
   gem 'guard-rspec'
   gem 'rspec', '>= 2.12.0'

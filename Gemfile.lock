@@ -252,7 +252,7 @@ DEPENDENCIES
   cucumber-rails
   dalli
   database_cleaner
-  factory_girl_rails (~> 4.0)
+  factory_girl_rails
   faker
   figaro
   guard-rspec
