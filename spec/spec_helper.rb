@@ -34,7 +34,7 @@ Spork.prefork do
     end
 
     Capybara.configure do |config|
-      config.default_host = "http://sheetsdashboard.dev"
+      config.default_host = "http://podio-base.dev"
     end
 
     OmniAuth.config.test_mode = true
