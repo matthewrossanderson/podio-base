@@ -18,7 +18,7 @@
 
 	      <%end%>
 	      <li>
-	      	<a href="https://sheetscom.podio.com/" target="_new">Podio <i class='icon-share'></i></a>
+	      	<a href="https://podio.com/" target="_new">Podio <i class='icon-share'></i></a>
 	      </li>
 	      <li>
 				 	<% if session[:podio_access_token] %>
@@ -64,13 +64,15 @@
 	<%= yield %>
 
 
-	<div id="footer" class="navbar">
-	  <div class="navbar-inner footer-inner">
-	  	<% if @api_health %><div class="api span3">Podio API Health <%= @api_health.round(2) %>%</div><% end %>
-	    <a class="brand" target="_new" href="http://blinkapplications.com">crafted with care by &nbsp;<%= image_tag "blink_logo_white.png", :class=>"blink-logo" %></a>
-	  </div>
-	</div>
 
+
+</div>
+
+<div id="footer" class="navbar">
+  <div class="navbar-inner footer-inner">
+  	<% if @api_health %><div class="api span3">Podio API Health <%= @api_health.round(2) %>%</div><% end %>
+    <a class="brand" target="_new" href="http://blinkapplications.com">crafted with care by &nbsp;<%= image_tag "blink_logo_white.png", :class=>"blink-logo" %></a>
+  </div>
 </div>
 
 </div>
