@@ -14,13 +14,6 @@
 .navbar {
 	margin-bottom: 0px;
 
-}
-
-.navbar .main-nav {
-		float:right;
-		margin-right: 0px;
-}
-
 .nav > li {
 	border-left: 1px solid #3376A4;
 	/*border-left: 1px solid #4b89b2;*/
@@ -36,19 +29,11 @@
 	-webkit-transition-timing-function: ease-in;
 	-ms-transition-timing-function: ease-in;
 	transition-timing-function: ease-in;
-}
 
 
-#logout-btn {
-	color: white;
-	margin: 0px 5px;
-}
+	}
 
-.navbar .nav > li > a:hover {
-	color:white;
-}
-
-.nav > li:hover {
+	.nav > li:hover {
 		background-color: #4680A5;
 
 		a {
@@ -58,7 +43,27 @@
 			color: white;
 			margin: 0px 5px;
 		}
+	}
+
+	.navbar .nav > li > a:hover {
+	color:white;
 }
+
+
+}
+
+.navbar .main-nav {
+		float:right;
+		margin-right: 0px;
+}
+
+
+#logout-btn {
+	color: white;
+	margin: 0px 5px;
+}
+
+
 
 
 .dropdown {
