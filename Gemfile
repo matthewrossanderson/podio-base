@@ -12,8 +12,8 @@ gem 'omniauth-podio'
 # heroku runs postgres in prod
 gem 'pg'
 
-# thin is a nice little webserver
-gem 'thin' 
+# unicorn is a heroku recommended webserver
+gem 'unicorn'
 
 # dalli is used for caching
 gem 'dalli'
